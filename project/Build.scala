@@ -4,7 +4,7 @@ import com.typesafe.sbt.SbtSite.site
 import com.typesafe.sbt.site.SphinxSupport.Sphinx
 
 object Scrooge extends Build {
-  val libVersion = "3.11.2"
+  val libVersion = "3.11.3-SNAPSHOT"
   val utilVersion = "6.10.0"
   val finagleVersion = "6.10.0"
 
@@ -172,7 +172,7 @@ object Scrooge extends Build {
     libraryDependencies ++= Seq(
       util("core"),
       util("codec"),
-      "org.apache.thrift" % "libthrift" % "0.8.0",
+      "org.apache.thrift" % "libthrift" % "0.9.0",
       "com.github.scopt" %% "scopt" % "2.1.0",
       "com.novocode" % "junit-interface" % "0.8" % "test->default",
       "com.github.spullara.mustache.java" % "compiler" % "0.8.12",
@@ -192,7 +192,7 @@ object Scrooge extends Build {
   ).settings(
     name := "scrooge-core",
     libraryDependencies ++= Seq(
-      "org.apache.thrift" % "libthrift" % "0.8.0" % "provided"
+      "org.apache.thrift" % "libthrift" % "0.9.0" % "provided"
     )
   )
 
@@ -229,7 +229,7 @@ object Scrooge extends Build {
     name := "scrooge-serializer",
     libraryDependencies ++= Seq(
       util("codec"),
-      "org.apache.thrift" % "libthrift" % "0.8.0" % "provided"
+      "org.apache.thrift" % "libthrift" % "0.9.0" % "provided"
     )
   ).dependsOn(scroogeRuntime)
 
