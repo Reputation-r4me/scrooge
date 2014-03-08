@@ -4,9 +4,9 @@ import com.typesafe.sbt.SbtSite.site
 import com.typesafe.sbt.site.SphinxSupport.Sphinx
 
 object Scrooge extends Build {
-  val libVersion = "3.11.3-SNAPSHOT"
-  val utilVersion = "6.10.0"
-  val finagleVersion = "6.10.0"
+  val libVersion = "3.11.3.2"
+  val utilVersion = "6.11.1"
+  val finagleVersion = "6.11.1"
 
   def util(which: String) = "com.twitter" %% ("util-"+which) % utilVersion
   def finagle(which: String) = "com.twitter" %% ("finagle-"+which) % finagleVersion
@@ -66,7 +66,7 @@ object Scrooge extends Build {
   val sharedSettings = Seq(
     version := libVersion,
     organization := "com.twitter",
-    crossScalaVersions := Seq("2.9.2", "2.10.0"),
+    crossScalaVersions := Seq("2.9.2", "2.10.3"),
 
     resolvers ++= Seq(
       "sonatype-public" at "https://oss.sonatype.org/content/groups/public"
@@ -82,7 +82,7 @@ object Scrooge extends Build {
       "org.scalatest" %% "scalatest" %"1.9.1" % "test",
       "org.scala-tools.testing" %% "specs" % "1.6.9" % "test" cross CrossVersion.binaryMapped {
         case "2.9.2" => "2.9.1"
-        case "2.10.0" => "2.10"
+        case "2.10.3" => "2.10"
         case x => x
       },
       "junit" % "junit" % "4.8.1" % "test"
