@@ -4,7 +4,7 @@ import com.typesafe.sbt.SbtSite.site
 import com.typesafe.sbt.site.SphinxSupport.Sphinx
 
 object Scrooge extends Build {
-  val libVersion = "3.11.3.2"
+  val libVersion = "3.11.3.3-SNAPSHOT"
   val utilVersion = "6.11.1"
   val finagleVersion = "6.11.1"
 
